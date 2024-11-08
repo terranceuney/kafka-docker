@@ -63,3 +63,17 @@ services:
       ZOOKEEPER_SASL_ENABLED: "false"
       KAFKA_OPTS: '-Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf'
       # -Dsun.security.krb5.debug=true -Dcom.ibm.security.jgss.debug=all -Dcom.ibm.security.krb5.Krb5Debug=all -Dsun.security.jgss.debug=true'
+  
+  kafka-client:
+    platform: linux/amd64/v2
+    build:
+      dockerfile: Dockerfile.kafka-client
+    command: tail -f /dev/null
+    hostname: kafkaclient
+    container_name: kafka-client
+    environment:
+      KRB5_CONFIG: /etc/krb5.conf
+    volumes:
+      - ./kerberos/keytabs:/etc/security/keytabs
+      - ./krb5.conf:/etc/krb5.conf
+      - ./ingest-test-kafka-data.py:/opt/ingest-test-kafka-data.py
