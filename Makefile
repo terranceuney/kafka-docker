@@ -7,7 +7,7 @@ docker-start:
 	docker compose up -d
 
 docker-test:
-	# docker exec -t kafka-client kinit -kt /etc/security/keytabs/kafka-producer.keytab kafka-producer@UNEY.COM
+	# docker exec -t kafka-client kinit -kt /etc/security/keytabs/kafka-producer.keytab kafka-producer/kafkaclient@UNEY.COM
 	docker exec -it kafka-client python3 ingest-test-kafka-data.py
 
 docker-reset:

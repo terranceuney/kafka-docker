@@ -11,8 +11,8 @@ if [ ! -f /var/lib/krb5kdc/principal.kadm5.lock ]; then
 fi
 
 if [ ! -f /var/lib/keytabs/kafka-producer.keytab ]; then
-    kadmin.local -q "addprinc -randkey kafka-producer@UNEY.COM"
-    kadmin.local -q "ktadd -k /var/lib/keytabs/kafka-producer.keytab kafka-producer@UNEY.COM"
+    kadmin.local -q "addprinc -randkey kafka-producer/kafkaclient@UNEY.COM"
+    kadmin.local -q "ktadd -k /var/lib/keytabs/kafka-producer.keytab kafka-producer/kafkaclient@UNEY.COM"
 fi
 
 if [ ! -f /var/lib/keytabs/kafka-broker.keytab ]; then
@@ -24,10 +24,5 @@ if [ ! -f /var/lib/keytabs/krbtgt.keytab ]; then
     kadmin.local -q "addprinc -randkey krbtgt/UNEY.COM@UNEY.COM"
     kadmin.local -q "ktadd -k /var/lib/keytabs/krbtgt.keytab krbtgt/UNEY.COM@UNEY.COM"
 fi
-
-# if [ ! -f /var/lib/keytabs/krbtgt-client.keytab ]; then
-#     kadmin.local -q "addprinc -randkey krbtgt/KAFKA-DOCKER_DEFAULT@UNEY.COM"
-#     kadmin.local -q "ktadd -k /var/lib/keytabs/krbtgt-client.keytab krbtgt/KAFKA-DOCKER_DEFAULT@UNEY.COM"
-# fi
 
 krb5kdc -n

@@ -9,9 +9,9 @@ topic_name = 'test-topic'
 conf = {
     'bootstrap.servers': kafka_broker,
     'security.protocol': 'SASL_PLAINTEXT', 
-    'sasl.mechanism': 'GSSAPI',  
+    'sasl.mechanism': 'GSSAPI',
     'sasl.kerberos.service.name': 'kafka-broker',
-    'sasl.kerberos.principal': 'kafka-producer@UNEY.COM',
+    'sasl.kerberos.principal': 'kafka-producer/kafkaclient@UNEY.COM',
     'sasl.kerberos.keytab': '/etc/security/keytabs/kafka-producer.keytab', 
 }
 

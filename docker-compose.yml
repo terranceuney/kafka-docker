@@ -67,6 +67,7 @@ services:
     container_name: kafka-client
     environment:
       KRB5_CONFIG: /etc/krb5.conf
+      KRB5_TRACE: /dev/stderr
     volumes:
       - ./kerberos/keytabs:/etc/security/keytabs
       - ./kerberos/krb5.conf:/etc/krb5.conf
