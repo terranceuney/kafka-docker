@@ -2,6 +2,8 @@ docker-build:
 	docker compose build
 
 docker-start:
+	docker compose up -d kerberos
+	sleep 3
 	docker compose up -d
 
 docker-test:
@@ -11,4 +13,5 @@ docker-test:
 docker-reset:
 	docker compose stop
 	rm -rf kerberos/keytabs
+	rm -rf kerberos/krb5kdc
 	docker system prune -f
