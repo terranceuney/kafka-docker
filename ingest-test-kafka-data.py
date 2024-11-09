@@ -3,7 +3,7 @@ import json
 import time
 import os
 
-kafka_broker = f"broker.kerberos.example:9092"
+kafka_broker = f"kafka:9092"
 topic_name = 'test-topic'
 
 conf = {
@@ -11,7 +11,7 @@ conf = {
     'security.protocol': 'SASL_PLAINTEXT', 
     'sasl.mechanism': 'GSSAPI',  
     'sasl.kerberos.service.name': 'kafka',
-    'sasl.kerberos.principal': 'jduke@KERBEROS.EXAMPLE',
+    'sasl.kerberos.principal': 'jduke@UNEY.COM',
     'sasl.kerberos.keytab': '/etc/security/keytabs/jduke.keytab', 
 }
 
