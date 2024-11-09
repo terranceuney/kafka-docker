@@ -11,9 +11,8 @@ conf = {
     'security.protocol': 'SASL_PLAINTEXT', 
     'sasl.mechanism': 'GSSAPI',  
     'sasl.kerberos.service.name': 'kafka',
-    'sasl.kerberos.kinit.cmd': 'kinit -kt /etc/security/keytabs/jduke.keytab jduke@KERBEROS.EXAMPLE', 
-    'sasl.kerberos.principal': '/etc/security/keytabs/jduke.keytab', 
-    'sasl.kerberos.keytab': 'jduke@KERBEROS.EXAMPLE', 
+    'sasl.kerberos.principal': 'jduke@KERBEROS.EXAMPLE',
+    'sasl.kerberos.keytab': '/etc/security/keytabs/jduke.keytab', 
 }
 
 admin_client = AdminClient(conf)

@@ -2,7 +2,7 @@ version: '2'
 
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.2.2
+    image: confluentinc/cp-zookeeper:7.7.1
     platform: linux/amd64/v2
     hostname: zookeeper.kerberos.example
     container_name: zookeeper
@@ -35,7 +35,7 @@ services:
         java -classpath /kerberos-server.jar com.github.kwart.kerberos.CreateKeytab jduke@KERBEROS.EXAMPLE theduke /mnt/jduke.keytab
 
   kafka-broker:
-    image: confluentinc/cp-kafka:7.2.2
+    image: confluentinc/cp-kafka:7.7.1
     platform: linux/amd64/v2
     hostname: broker.kerberos.example
     container_name: kafka-broker
