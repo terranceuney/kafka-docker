@@ -15,9 +15,9 @@ if [ ! -f /var/lib/keytabs/jduke.keytab ]; then
     kadmin.local -q "ktadd -k /var/lib/keytabs/jduke.keytab jduke@UNEY.COM"
 fi
 
-if [ ! -f /var/lib/keytabs/broker.keytab ]; then
-    kadmin.local -q "addprinc -randkey kafka/kafka@UNEY.COM"
-    kadmin.local -q "ktadd -k /var/lib/keytabs/broker.keytab kafka/kafka@UNEY.COM"
+if [ ! -f /var/lib/keytabs/kafka-broker.keytab ]; then
+    kadmin.local -q "addprinc -randkey kafka-broker/kafka@UNEY.COM"
+    kadmin.local -q "ktadd -k /var/lib/keytabs/kafka-broker.keytab kafka-broker/kafka@UNEY.COM"
 fi
 
 if [ ! -f /var/lib/keytabs/krbtgt.keytab ]; then
