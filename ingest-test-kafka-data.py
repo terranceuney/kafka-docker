@@ -10,9 +10,9 @@ conf = {
     'bootstrap.servers': kafka_broker,
     'security.protocol': 'SASL_PLAINTEXT', 
     'sasl.mechanism': 'GSSAPI',  
-    'sasl.kerberos.service.name': 'kafka',
-    'sasl.kerberos.principal': 'jduke@UNEY.COM',
-    'sasl.kerberos.keytab': '/etc/security/keytabs/jduke.keytab', 
+    'sasl.kerberos.service.name': 'kafka-broker',
+    'sasl.kerberos.principal': 'kafka-producer@UNEY.COM',
+    'sasl.kerberos.keytab': '/etc/security/keytabs/kafka-producer.keytab', 
 }
 
 admin_client = AdminClient(conf)
