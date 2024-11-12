@@ -2,7 +2,7 @@ version: '2'
 
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.7.1
+    image: confluentinc/cp-zookeeper:latest
     platform: linux/amd64/v2
     container_name: zookeeper
     environment:
@@ -30,7 +30,7 @@ services:
       - ./kerberos/kdc-start.sh:/usr/local/bin/kdc-start.sh
 
   kafka:
-    image: confluentinc/cp-kafka:7.7.1
+    image: confluentinc/cp-kafka:latest
     platform: linux/amd64/v2
     hostname: kafka
     container_name: kafka
