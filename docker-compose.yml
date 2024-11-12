@@ -40,8 +40,11 @@ services:
     volumes:
       - ./kerberos/keytabs:/mnt
       - ./kerberos/krb5.conf:/etc/krb5.conf
+      - ./kerberos/krb5-h100.conf:/etc/krb5-h100.conf
       - ./kafka_server_jaas.conf:/etc/kafka/kafka_server_jaas.conf
+      - ./kafka_client_jaas.conf:/etc/kafka/kafka_client_jaas.conf
       - ./kafka-client.properties:/etc/kafka/kafka-client.properties
+      - ./kafka-h10-client.properties:/etc/kafka/kafka-h10-client.properties
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_SASL_ENABLED_MECHANISMS: GSSAPI
