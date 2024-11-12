@@ -10,9 +10,9 @@ if [ ! -f /var/lib/krb5kdc/principal.kadm5.lock ]; then
     kadmin.local -q "addprinc admin/admin"
 fi
 
-if [ ! -f /var/lib/keytabs/kafka-producer.keytab ]; then
-    kadmin.local -q "addprinc -randkey kafka-producer/kafkaclient@UNEY.COM"
-    kadmin.local -q "ktadd -k /var/lib/keytabs/kafka-producer.keytab kafka-producer/kafkaclient@UNEY.COM"
+if [ ! -f /var/lib/keytabs/kafka-producer-local.keytab ]; then
+    kadmin.local -q "addprinc -randkey kafka-producer-local/kafkaclient@UNEY.COM"
+    kadmin.local -q "ktadd -k /var/lib/keytabs/kafka-producer-local.keytab kafka-producer-local/kafkaclient@UNEY.COM"
 fi
 
 if [ ! -f /var/lib/keytabs/kafka-broker.keytab ]; then
