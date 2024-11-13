@@ -17,5 +17,5 @@ docker exec -t kafka kafka-console-consumer --bootstrap-server kafka:9092 --topi
 echo "[WARNING!!!] please copy kafka-producer.keytab into ./kerberos/keytabs/ then run below commands..."
 exit 0 
 
-docker exec -t kafka bash -c "env KRB5_CONFIG=/etc/krb5-h100.conf KAFKA_OPTS='-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf -Djava.security.krb5.conf=/etc/krb5-h100.conf' kafka-console-producer --bootstrap-server kafka.h100-smartai.com:54092 --topic test-topic --producer.config /etc/kafka/kafka-h10-client.properties < /etc/test-topic.json"
-docker exec -t kafka env KRB5_CONFIG=/etc/krb5-h100.conf KAFKA_OPTS='-Djava.security.auth.login.config=/etc/kafka/kafka_client_jaas.conf -Djava.security.krb5.conf=/etc/krb5-h100.conf' kafka-console-consumer --bootstrap-server kafka.h100-smartai.com:54092 --topic test-topic --consumer.config /etc/kafka/kafka-h10-client.properties --from-beginning --max-messages 10
+docker exec -t kafka bash -c "env KRB5_CONFIG=/etc/krb5-h100.conf KAFKA_OPTS='-Djava.security.krb5.conf=/etc/krb5-h100.conf' kafka-console-producer --bootstrap-server kafka.h100-smartai.com:54092 --topic test-topic --producer.config /etc/kafka/kafka-h10-client.properties < /etc/test-topic.json"
+docker exec -t kafka env KRB5_CONFIG=/etc/krb5-h100.conf KAFKA_OPTS='-Djava.security.krb5.conf=/etc/krb5-h100.conf' kafka-console-consumer --bootstrap-server kafka.h100-smartai.com:54092 --topic test-topic --consumer.config /etc/kafka/kafka-h10-client.properties --from-beginning --max-messages 10
