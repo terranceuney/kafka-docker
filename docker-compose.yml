@@ -45,6 +45,7 @@ services:
       - ./kafka_client_jaas.conf:/etc/kafka/kafka_client_jaas.conf
       - ./kafka-client.properties:/etc/kafka/kafka-client.properties
       - ./kafka-h10-client.properties:/etc/kafka/kafka-h10-client.properties
+      - ./test-topic.json:/etc/test-topic.json
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_SASL_ENABLED_MECHANISMS: GSSAPI
